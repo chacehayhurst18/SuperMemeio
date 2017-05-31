@@ -14,6 +14,10 @@ import javax.imageio.ImageIO;
 
 public class Game extends Canvas {
 	BufferedImage img;
+	BufferedImage sprite1;
+	BufferedImage sprite2;
+	BufferedImage fireball1;
+	BufferedImage fireball2;
 	Random a;
 	int GAME_NUMBER;
 	int HEIGHT, WIDTH;
@@ -42,6 +46,11 @@ public class Game extends Canvas {
 				img = ImageIO.read(new File("wp4.jpg"));
 				break;
 			}
+			
+			sprite1 = ImageIO.read(new File("sprite1.png"));
+			sprite2 = ImageIO.read(new File("sprite3.png"));
+			fireball1 = ImageIO.read(new File("fireball1.png"));
+			fireball2 = ImageIO.read(new File("fireball2.png"));
 
 		} catch (IOException e) {
 
@@ -56,6 +65,11 @@ public class Game extends Canvas {
 
 	public void paint(Graphics g) {
 		g.drawImage(img, 0, 0, new UselessImage());
+		
+		g.drawImage(sprite1, 0, 330, new UselessImage());
+		g.drawImage(sprite2, 1049, 330, new UselessImage());
+		g.drawImage(fireball1, 500, 150, new UselessImage());
+		g.drawImage(fireball2, 500, 300, new UselessImage());
 	}
 
 }
